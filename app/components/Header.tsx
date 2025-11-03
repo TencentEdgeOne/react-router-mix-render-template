@@ -12,6 +12,7 @@ const Header = () => {
   const navigationItems = [
     { href: "/", label: "Home" },
     { href: "/ssr", label: "SSR" },
+    { href: "/csr", label: "CSR" },
     { href: "/prerender", label: "Pre-render" },
     { href: "/streaming", label: "Streaming" },
     { href: "/node-functions", label: "Node Functions" },

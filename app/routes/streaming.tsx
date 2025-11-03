@@ -147,6 +147,12 @@ export default function StreamingPage({ loaderData }) {
   );
 }`;
 
+  const entrySetupInfo = `React Router v7 enables streaming SSR by returning unresolved Promises directly from loaders. When the server encounters a Promise, it sends the initial HTML shell immediately with Suspense fallbacks, then streams resolved data as script tags that hydrate into the page. This requires proper configuration in both entry files to handle the streaming lifecycle.
+
+**entry.server.tsx**: Uses renderToPipeableStream with onShellReady callback to send the initial HTML shell immediately (for users) or onAllReady (for bots). The stream pipes React's rendered output through a PassThrough stream to a Web ReadableStream, enabling progressive HTML delivery as deferred Promises resolve.
+
+**entry.client.tsx**: Uses hydrateRoot wrapped in startTransition to hydrate the server-rendered HTML. The HydratedRouter automatically picks up streamed data and seamlessly transitions from server-rendered fallbacks to resolved content without full re-renders.`;
+
   const streamingFeatures = [
     {
       title: "Instant Shell",
@@ -187,6 +193,7 @@ export default function StreamingPage({ loaderData }) {
         subtitle="Progressive rendering with deferred data loading for optimal performance."
         description="The page shell and fast data arrive instantly, while slow data streams in progressively. This provides the best user experience by showing content as soon as possible."
         codeExample={codeExample}
+        additionalInfo={entrySetupInfo}
         renderMode="Streaming"
         dataDisplay={
           <div className="space-y-8">

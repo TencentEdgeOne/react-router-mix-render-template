@@ -8,6 +8,11 @@ const Features = () => {
       demoLink: "/ssr",
     },
     {
+      title: "Client-Side Rendering (CSR)",
+      description: "Dynamic rendering in the browser for interactive experiences",
+      demoLink: "/csr",
+    },
+    {
       title: "Pre-render",
       description:
         "Pre-generate static pages at build time for maximum performance",

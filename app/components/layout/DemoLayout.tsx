@@ -7,6 +7,7 @@ interface DemoLayoutProps {
   codeExample: string;
   renderMode: string;
   dataDisplay: React.ReactNode;
+  additionalInfo?: string;
 }
 
 export const DemoLayout = ({
@@ -16,6 +17,7 @@ export const DemoLayout = ({
   codeExample,
   renderMode,
   dataDisplay,
+  additionalInfo,
 }: DemoLayoutProps) => {
   return (
     <>
@@ -43,6 +45,45 @@ export const DemoLayout = ({
 
       {/* Dynamic data display area */}
       <div className="container mx-auto px-4 mb-8">{dataDisplay}</div>
+
+      {/* Additional info area (optional) */}
+      {additionalInfo && (
+        <div className="container mx-auto px-4 mb-8">
+          <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-8">
+            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+              <span className="text-2xl">📋</span>
+              <span>Entry Files Setup</span>
+            </h3>
+            <div className="space-y-5">
+              {additionalInfo.split("\n\n").map((para, index) => {
+                // Check if paragraph starts with **
+                if (para.trim().startsWith("**")) {
+                  const parts = para.split("**");
+                  const title = parts[1];
+                  const content = parts.slice(2).join("**");
+                  
+                  return (
+                    <div key={index} className="bg-gray-800/40 rounded-lg p-5 border border-gray-700/50">
+                      <h4 className="text-base font-semibold text-blue-300 mb-3 font-mono">
+                        {title}
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {content.replace(/^:\s*/, "")}
+                      </p>
+                    </div>
+                  );
+                }
+                
+                return (
+                  <p key={index} className="text-gray-300 text-base leading-relaxed bg-gray-800/30 rounded-lg p-4 border-l-4 border-blue-500/50">
+                    {para}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Code example area */}
       <div className="container mx-auto px-4 mb-20">
