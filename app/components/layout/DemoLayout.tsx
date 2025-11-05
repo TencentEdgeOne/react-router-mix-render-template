@@ -23,11 +23,11 @@ export const DemoLayout = ({
     <>
       {/* Main title area */}
       <div className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl font-bold text-white mb-6">
+        <h1 className="text-5xl font-bold text-gray-900 mb-6">
           EdgeOne Pages React Router Starter - {title}
         </h1>
-        <p className="text-xl text-gray-300 mb-4">{subtitle}</p>
-        <p className="text-lg text-gray-400 mb-8">{description}</p>
+        <p className="text-xl text-gray-600 mb-4">{subtitle}</p>
+        <p className="text-lg text-gray-500 mb-8">{description}</p>
         <a
           href="https://reactrouter.com/start/modes"
           target="_blank"
@@ -36,7 +36,7 @@ export const DemoLayout = ({
           <Button
             size="lg"
             variant="outline"
-            className="hover:bg-gray-700 text-white px-8 py-3 text-lg cursor-pointer border-gray-600"
+            className="hover:bg-gray-50 text-gray-700 px-8 py-3 text-lg cursor-pointer border-gray-300"
           >
             View Documentation
           </Button>
@@ -49,8 +49,8 @@ export const DemoLayout = ({
       {/* Additional info area (optional) */}
       {additionalInfo && (
         <div className="container mx-auto px-4 mb-8">
-          <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
               <span className="text-2xl">📋</span>
               <span>Entry Files Setup</span>
             </h3>
@@ -63,11 +63,11 @@ export const DemoLayout = ({
                   const content = parts.slice(2).join("**");
                   
                   return (
-                    <div key={index} className="bg-gray-800/40 rounded-lg p-5 border border-gray-700/50">
-                      <h4 className="text-base font-semibold text-blue-300 mb-3 font-mono">
+                    <div key={index} className="bg-white rounded-lg p-5 border border-gray-200">
+                      <h4 className="text-base font-semibold text-primary mb-3 font-mono">
                         {title}
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         {content.replace(/^:\s*/, "")}
                       </p>
                     </div>
@@ -75,7 +75,7 @@ export const DemoLayout = ({
                 }
                 
                 return (
-                  <p key={index} className="text-gray-300 text-base leading-relaxed bg-gray-800/30 rounded-lg p-4 border-l-4 border-blue-500/50">
+                  <p key={index} className="text-gray-600 text-base leading-relaxed bg-white rounded-lg p-4 border-l-4 border-primary">
                     {para}
                   </p>
                 );
@@ -87,10 +87,10 @@ export const DemoLayout = ({
 
       {/* Code example area */}
       <div className="container mx-auto px-4 mb-20">
-        <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
           <div className="bg-gray-900 rounded p-6 text-left">
             <pre className="text-sm overflow-x-auto">
-              <code>{codeExample}</code>
+              <code className="text-gray-100">{codeExample}</code>
             </pre>
           </div>
         </div>

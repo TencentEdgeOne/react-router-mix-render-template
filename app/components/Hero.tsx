@@ -3,12 +3,12 @@ import { Zap } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
           EdgeOne Pages React Router Starter
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
           Build high-performance, scalable web applications using React Router
           v7. Leverage complete full-stack rendering modes including SSR and
           Pre-render, while building dynamic APIs and complex backend features.
@@ -21,7 +21,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg cursor-pointer"
+              className="bg-primary hover:bg-primary-dark text-white px-8 py-3 text-lg cursor-pointer"
             >
               <Zap className="w-5 h-5 mr-2" />
               Get Started
@@ -35,7 +35,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-3 text-lg cursor-pointer border-gray-600 text-gray-300 hover:bg-gray-800"
+              className="px-8 py-3 text-lg cursor-pointer border-gray-300 text-gray-700 hover:bg-gray-50"
             >
               View Documentation
             </Button>

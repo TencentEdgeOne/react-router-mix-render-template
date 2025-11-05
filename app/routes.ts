@@ -6,6 +6,5 @@ export default [
   route("csr", "routes/csr.tsx"),
   route("streaming", "routes/streaming.tsx"),
   route("prerender", "routes/prerender.tsx"),
-  route("node-functions", "routes/node-functions.tsx"),
-  route("edge-functions", "routes/edge-functions.tsx"),
+  route("pages-functions", "routes/pages-functions.tsx"),
 ] satisfies RouteConfig;

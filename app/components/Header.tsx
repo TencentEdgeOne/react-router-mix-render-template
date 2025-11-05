@@ -15,12 +15,11 @@ const Header = () => {
     { href: "/csr", label: "CSR" },
     { href: "/prerender", label: "Pre-render" },
     { href: "/streaming", label: "Streaming" },
-    { href: "/node-functions", label: "Node Functions" },
-    { href: "/edge-functions", label: "Edge Functions" },
+    { href: "/pages-functions", label: "Pages Functions" },
   ];
 
   return (
-    <header className="w-full bg-gray-900/50 backdrop-blur-sm border-b border-gray-800">
+    <header className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 py-4">
         {/* Desktop Layout */}
         <div className="hidden lg:flex items-center justify-between relative">
@@ -29,17 +28,11 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center">
-                <img
-                  src="/eo-logo-blue.svg"
-                  alt="EdgeOne Pages"
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <h1 className="text-lg font-semibold">EdgeOne Pages</h1>
-            </div>
+            <img
+              src="/rr_lockup_light.svg"
+              alt="React Router"
+              className="h-8"
+            />
           </a>
 
           {/* Navigation - Centered */}
@@ -51,8 +44,8 @@ const Header = () => {
                     <Link
                       to={item.href}
                       className={cn(
-                        "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-800 hover:text-white focus:bg-gray-800 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                        "text-gray-300"
+                        "group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                        "text-gray-600"
                       )}
                     >
                       {item.label}
@@ -70,7 +63,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-6 h-6 text-gray-400 rounded-full flex items-center justify-center">
+              <div className="w-6 h-6 text-gray-600 rounded-full flex items-center justify-center hover:text-gray-900 transition-colors">
                 <svg
                   className="w-6 h-6"
                   fill="currentColor"
@@ -91,22 +84,11 @@ const Header = () => {
         {/* Mobile Layout */}
         <div className="lg:hidden flex items-center justify-between">
           <Link to="/">
-            <div className="flex items-center space-x-2">
-              <div className="w-5 h-5 rounded-full flex items-center justify-center">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 256 256"
-                  className="text-blue-500"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M78.5 89.5c-11.5 0-20.8 9.3-20.8 20.8s9.3 20.8 20.8 20.8s20.8-9.3 20.8-20.8s-9.3-20.8-20.8-20.8zm99 0c-11.5 0-20.8 9.3-20.8 20.8s9.3 20.8 20.8 20.8s20.8-9.3 20.8-20.8s-9.3-20.8-20.8-20.8zm-49.5 66c-11.5 0-20.8 9.3-20.8 20.8s9.3 20.8 20.8 20.8s20.8-9.3 20.8-20.8s-9.3-20.8-20.8-20.8z"
-                  />
-                </svg>
-              </div>
-              <h1 className="text-base font-semibold">React Router v7</h1>
-            </div>
+            <img
+              src="/rr_lockup_light.svg"
+              alt="React Router"
+              className="h-6"
+            />
           </Link>
 
           <div className="flex items-center space-x-3">
@@ -116,7 +98,7 @@ const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-5 h-5 text-gray-400 rounded-full flex items-center justify-center">
+              <div className="w-5 h-5 text-gray-600 rounded-full flex items-center justify-center hover:text-gray-900 transition-colors">
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"
@@ -135,7 +117,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="p-2 rounded-md text-gray-300 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-600"
+              className="p-2 rounded-md text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary"
               aria-label="Toggle mobile menu"
             >
               <svg
@@ -167,13 +149,13 @@ const Header = () => {
 
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-800">
+          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-2 pt-4">
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="block px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-md transition-colors"
+                  className="block px-4 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-md transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}

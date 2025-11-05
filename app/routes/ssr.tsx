@@ -166,33 +166,33 @@ export default function SSRPage({ loaderData }: Route.ComponentProps) {
               features={ssrFeatures}
             />
 
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 SSR vs Pre-render Comparison
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {comparisonWithPrerender.map((item, index) => (
-                  <div key={index} className="bg-gray-700 rounded-lg p-4">
-                    <h4 className="font-medium text-white mb-2">
+                  <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 className="font-medium text-gray-900 mb-2">
                       {item.aspect}
                     </h4>
                     <div className="space-y-2 text-sm">
                       <div>
-                        <span className="text-gray-400">SSR Route:</span>
+                        <span className="text-gray-600">SSR Route:</span>
                         <div className={`${item.color} font-medium`}>
                           {item.ssr}
                         </div>
                       </div>
                       <div>
-                        <span className="text-gray-400">Pre-render Route:</span>
-                        <div className="text-gray-300">{item.prerender}</div>
+                        <span className="text-gray-600">Pre-render Route:</span>
+                        <div className="text-gray-700">{item.prerender}</div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 p-4 bg-green-900/30 rounded-lg border border-green-500/30">
-                <p className="text-green-200 text-sm">
+              <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+                <p className="text-green-800 text-sm">
                   🔄 <strong>Key Difference:</strong> SSR routes always render
                   on the server per request. Pre-render routes can work in both
                   SSR mode (fresh data) and non-SSR mode (static build-time

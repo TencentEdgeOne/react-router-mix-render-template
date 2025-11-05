@@ -182,33 +182,33 @@ export default {
               features={prerenderFeatures}
             />
 
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Pre-render: SSR Mode vs Non-SSR Mode
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {comparisonWithSSR.map((item, index) => (
-                  <div key={index} className="bg-gray-700 rounded-lg p-4">
-                    <h4 className="font-medium text-white mb-2">
+                  <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                    <h4 className="font-medium text-gray-900 mb-2">
                       {item.aspect}
                     </h4>
                     <div className="space-y-2 text-sm">
                       <div>
-                        <span className="text-gray-400">Non-SSR:</span>
+                        <span className="text-gray-600">Non-SSR:</span>
                         <div className={`${item.color} font-medium`}>
                           {item.nonSSR}
                         </div>
                       </div>
                       <div>
-                        <span className="text-gray-400">SSR Mode:</span>
-                        <div className="text-gray-300">{item.ssr}</div>
+                        <span className="text-gray-600">SSR Mode:</span>
+                        <div className="text-gray-700">{item.ssr}</div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 p-4 bg-blue-900/30 rounded-lg border border-blue-500/30">
-                <p className="text-blue-200 text-sm">
+              <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-blue-800 text-sm">
                   💡 <strong>Key Insight:</strong> With pre-render enabled,
                   non-SSR mode serves static HTML from build time (fast but
                   stale), while SSR mode renders fresh content per request

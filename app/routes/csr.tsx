@@ -173,9 +173,9 @@ export default function CSRPage() {
         dataDisplay={
           <div className="space-y-8">
             {loading ? (
-              <div className="bg-gray-800 rounded-lg p-8 text-center">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
-                <p className="mt-4 text-gray-400">Loading data on the client...</p>
+              <div className="bg-white border border-gray-200 rounded-lg p-8 text-center shadow-sm">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                <p className="mt-4 text-gray-600">Loading data on the client...</p>
               </div>
             ) : (
               <>
@@ -189,39 +189,39 @@ export default function CSRPage() {
                 <div className="flex justify-center">
                   <button
                     onClick={() => setCounter(counter + 1)}
-                    className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                    className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors"
                   >
                     Refresh Data (Client-Side)
                   </button>
                 </div>
 
-                <div className="bg-gray-800 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     CSR vs SSR Comparison
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {comparisonWithSSR.map((item, index) => (
-                      <div key={index} className="bg-gray-700 rounded-lg p-4">
-                        <h4 className="font-medium text-white mb-2">
+                      <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                        <h4 className="font-medium text-gray-900 mb-2">
                           {item.aspect}
                         </h4>
                         <div className="space-y-2 text-sm">
                           <div>
-                            <span className="text-gray-400">CSR Route:</span>
+                            <span className="text-gray-600">CSR Route:</span>
                             <div className={`${item.color} font-medium`}>
                               {item.csr}
                             </div>
                           </div>
                           <div>
-                            <span className="text-gray-400">SSR Route:</span>
-                            <div className="text-gray-300">{item.ssr}</div>
+                            <span className="text-gray-600">SSR Route:</span>
+                            <div className="text-gray-700">{item.ssr}</div>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 p-4 bg-blue-900/30 rounded-lg border border-blue-500/30">
-                    <p className="text-blue-200 text-sm">
+                  <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="text-blue-800 text-sm">
                       💡 <strong>Key Difference:</strong> CSR routes render in
                       the browser after JavaScript loads. SSR routes render on
                       the server before sending HTML to the client. CSR is great

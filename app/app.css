@@ -3,7 +3,9 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-primary: #1c66e5;
+  --color-primary: #e11d48;
+  --color-primary-dark: #be123c;
+  --color-primary-light: #fb7185;
   --color-gray-50: #f9fafb;
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -18,8 +20,8 @@
 
 html,
 body {
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #111827;
   font-family: "Inter", sans-serif;
 }
 

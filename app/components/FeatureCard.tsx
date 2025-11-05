@@ -10,15 +10,15 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ title, description, demoLink, className = "" }: FeatureCardProps) => {
   return (
-    <div className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-6 hover:bg-gray-800/70 transition-all duration-300 ${className}`}>
+    <div className={`bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300 ${className}`}>
       <div className="h-16">
-        <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+        <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
       </div>
       <div className="h-16">
-        <p className="text-gray-300 leading-relaxed mb-4">{description}</p>
+        <p className="text-gray-600 leading-relaxed mb-4">{description}</p>
       </div>
       <Link to={demoLink}>
-        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
+        <Button className="w-full bg-primary hover:bg-primary-dark text-white cursor-pointer">
           View Demo
         </Button>
       </Link>

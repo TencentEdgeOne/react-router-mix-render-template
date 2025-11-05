@@ -206,24 +206,24 @@ export default function StreamingPage({ loaderData }) {
             />
 
             {/* Slow Data - Streams In */}
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 🌊 Slow Data (Streaming - 3 seconds)
               </h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 This data is being fetched in the background and will stream in
                 when ready. Watch the loading state!
               </p>
               <Suspense
                 fallback={
-                  <div className="bg-yellow-900/30 border border-yellow-500/30 rounded-lg p-6">
+                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                     <div className="flex items-center space-x-3">
-                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-yellow-400"></div>
-                      <span className="text-yellow-200 font-medium">
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-yellow-600"></div>
+                      <span className="text-yellow-800 font-medium">
                         Loading slow data... (3 seconds)
                       </span>
                     </div>
-                    <p className="text-yellow-300 text-sm mt-2">
+                    <p className="text-yellow-700 text-sm mt-2">
                       The page is already interactive! You can scroll and
                       interact while this loads.
                     </p>
@@ -232,40 +232,40 @@ export default function StreamingPage({ loaderData }) {
               >
                 <Await resolve={slowData}>
                   {(data) => (
-                    <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-6">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <span className="text-gray-400 text-sm">Message</span>
-                          <div className="text-green-400 font-medium">
+                          <span className="text-gray-600 text-sm">Message</span>
+                          <div className="text-green-600 font-medium">
                             {data.message}
                           </div>
                         </div>
                         <div>
-                          <span className="text-gray-400 text-sm">
+                          <span className="text-gray-600 text-sm">
                             Timestamp
                           </span>
-                          <div className="text-blue-400 font-medium">
+                          <div className="text-blue-600 font-medium">
                             {data.timestamp}
                           </div>
                         </div>
                         <div>
-                          <span className="text-gray-400 text-sm">
+                          <span className="text-gray-600 text-sm">
                             Random Value
                           </span>
-                          <div className="text-purple-400 font-medium">
+                          <div className="text-purple-600 font-medium">
                             {data.randomValue}
                           </div>
                         </div>
                         <div>
-                          <span className="text-gray-400 text-sm">
+                          <span className="text-gray-600 text-sm">
                             Server Hash
                           </span>
-                          <div className="text-indigo-400 font-medium">
+                          <div className="text-indigo-600 font-medium">
                             {data.serverHash}
                           </div>
                         </div>
                       </div>
-                      <div className="mt-4 text-green-200 text-sm">
+                      <div className="mt-4 text-green-700 text-sm">
                         ✅ Streamed successfully after 3 seconds!
                       </div>
                     </div>
@@ -275,24 +275,24 @@ export default function StreamingPage({ loaderData }) {
             </div>
 
             {/* Very Slow Data - Streams In Even Later */}
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 🐌 Very Slow Data (Streaming - 5 seconds)
               </h3>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 This data takes even longer to fetch. Notice how the page is
                 fully functional while waiting!
               </p>
               <Suspense
                 fallback={
-                  <div className="bg-orange-900/30 border border-orange-500/30 rounded-lg p-6">
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
                     <div className="flex items-center space-x-3">
-                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-400"></div>
-                      <span className="text-orange-200 font-medium">
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-600"></div>
+                      <span className="text-orange-800 font-medium">
                         Loading very slow data... (5 seconds)
                       </span>
                     </div>
-                    <p className="text-orange-300 text-sm mt-2">
+                    <p className="text-orange-700 text-sm mt-2">
                       Still loading, but the rest of the page is already
                       rendered and interactive!
                     </p>
@@ -301,40 +301,40 @@ export default function StreamingPage({ loaderData }) {
               >
                 <Await resolve={verySlowData}>
                   {(data) => (
-                    <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-6">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <span className="text-gray-400 text-sm">Message</span>
-                          <div className="text-blue-400 font-medium">
+                          <span className="text-gray-600 text-sm">Message</span>
+                          <div className="text-blue-600 font-medium">
                             {data.message}
                           </div>
                         </div>
                         <div>
-                          <span className="text-gray-400 text-sm">
+                          <span className="text-gray-600 text-sm">
                             Timestamp
                           </span>
-                          <div className="text-green-400 font-medium">
+                          <div className="text-green-600 font-medium">
                             {data.timestamp}
                           </div>
                         </div>
                         <div>
-                          <span className="text-gray-400 text-sm">
+                          <span className="text-gray-600 text-sm">
                             Random Value
                           </span>
-                          <div className="text-purple-400 font-medium">
+                          <div className="text-purple-600 font-medium">
                             {data.randomValue}
                           </div>
                         </div>
                         <div>
-                          <span className="text-gray-400 text-sm">
+                          <span className="text-gray-600 text-sm">
                             Complex Data
                           </span>
-                          <div className="text-yellow-400 font-medium">
+                          <div className="text-yellow-600 font-medium">
                             {JSON.stringify(data.complexData)}
                           </div>
                         </div>
                       </div>
-                      <div className="mt-4 text-blue-200 text-sm">
+                      <div className="mt-4 text-blue-700 text-sm">
                         ✅ Streamed successfully after 5 seconds!
                       </div>
                     </div>
@@ -344,52 +344,52 @@ export default function StreamingPage({ loaderData }) {
             </div>
 
             {/* How It Works */}
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 🔍 How Streaming Works
               </h3>
               <div className="space-y-4">
-                <div className="bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-medium text-white mb-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-medium text-gray-900 mb-2">
                     1. Server Receives Request
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-600 text-sm">
                     The loader starts executing. Fast data is awaited, slow data
                     is returned as Promise (not awaited).
                   </p>
                 </div>
-                <div className="bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-medium text-white mb-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-medium text-gray-900 mb-2">
                     2. Initial HTML Chunk Sent
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-600 text-sm">
                     React's renderToPipeableStream sends the HTML shell with
                     fast data immediately. The browser can start rendering!
                   </p>
                 </div>
-                <div className="bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-medium text-white mb-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-medium text-gray-900 mb-2">
                     3. Suspense Boundaries Show Fallbacks
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-600 text-sm">
                     Areas waiting for slow data show loading states. The page is
                     already interactive!
                   </p>
                 </div>
-                <div className="bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-medium text-white mb-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-medium text-gray-900 mb-2">
                     4. Slow Data Streams In
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-600 text-sm">
                     As Promises resolve, React streams additional HTML chunks to
                     replace the fallbacks.
                   </p>
                 </div>
-                <div className="bg-gray-700 rounded-lg p-4">
-                  <h4 className="font-medium text-white mb-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-medium text-gray-900 mb-2">
                     5. Client-Side Navigation
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-600 text-sm">
                     The clientLoader uses the same Promise pattern, so
                     navigation feels instant even with slow data!
                   </p>
@@ -398,41 +398,41 @@ export default function StreamingPage({ loaderData }) {
             </div>
 
             {/* Benefits */}
-            <div className="bg-gradient-to-r from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-white mb-4">
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 ✨ Benefits of Streaming
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-medium text-green-400 mb-2">
+                  <h4 className="font-medium text-green-600 mb-2">
                     Faster Time to First Byte (TTFB)
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-700 text-sm">
                     The server sends HTML immediately without waiting for all
                     data
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-blue-400 mb-2">
+                  <h4 className="font-medium text-blue-600 mb-2">
                     Better Perceived Performance
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-700 text-sm">
                     Users see content faster and can interact sooner
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-purple-400 mb-2">
+                  <h4 className="font-medium text-purple-600 mb-2">
                     Progressive Enhancement
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-700 text-sm">
                     Content appears progressively as data becomes available
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-yellow-400 mb-2">
+                  <h4 className="font-medium text-yellow-600 mb-2">
                     Optimal Resource Usage
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-700 text-sm">
                     Server doesn't block on slow operations, improving
                     throughput
                   </p>

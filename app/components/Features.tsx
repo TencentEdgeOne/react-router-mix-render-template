@@ -25,19 +25,14 @@ const Features = () => {
       demoLink: "/streaming",
     },
     {
-      title: "Node Functions",
-      description: "Run code in Node Runtime, no server management required",
-      demoLink: "/node-functions",
-    },
-    {
-      title: "Edge Functions",
-      description: "Run code in Edge Runtime, no server management required",
-      demoLink: "/edge-functions",
+      title: "Pages Functions",
+      description: "Serverless functions with Edge & Node runtime, no server management required",
+      demoLink: "/pages-functions",
     },
   ];
 
   return (
-    <section className="w-full pb-20 bg-black">
+    <section className="w-full pb-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
