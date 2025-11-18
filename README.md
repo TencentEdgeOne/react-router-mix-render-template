@@ -6,10 +6,10 @@ A comprehensive React Router v7 starter template for EdgeOne Pages, showcasing v
 
 - **Server-Side Rendering (SSR)** - Real-time server-side rendering
 - **Client-Side Rendering (CSR)** - Dynamic rendering in the browser
+- **Streaming SSR** - Progressive rendering with deferred data loading
 - **Static Site Generation (SSG)** - Static generation at build time
-- **Node Functions** - Node.js runtime server functions
-- **Edge Functions** - Edge runtime functions
-- **Client-Side Routing** - Fast client-side routing
+- **Pages Functions** - Edge and Node.js serverless functions
+- **Modern UI** - Beautiful interface with Tailwind CSS
 
 ## 🛠️ Tech Stack
 
@@ -36,6 +36,8 @@ edgeone pages dev
 edgeone pages deploy
 ```
 
+Learn more about [EdgeOne CLI](https://pages.edgeone.ai/document/edgeone-cli).
+
 ## 🎯 Pages Overview
 
 ### Home (/)
@@ -61,6 +63,16 @@ Demonstrates client-side rendering:
 - Reduced server load
 - Suitable for interactive applications
 
+### Streaming (/streaming)
+
+Demonstrates streaming SSR:
+
+- Progressive rendering with deferred data loading
+- HTML shell sent immediately with fast data
+- Slow data streams in as it becomes available
+- Optimal user experience with Suspense boundaries
+- Works for both SSR and client-side navigation
+
 ### Pre-render (/prerender)
 
 Demonstrates static site generation:
@@ -70,48 +82,14 @@ Demonstrates static site generation:
 - CDN friendly
 - Suitable for static content
 
-### Node Functions (/node-functions)
+### Pages Functions (/pages-functions)
 
-Demonstrates Node.js server functions:
+Demonstrates EdgeOne Pages Functions:
 
-- Full Node.js runtime
-- Complex backend logic
-- Database operations
-- API integrations
-
-### Edge Functions (/edge-functions)
-
-Demonstrates edge functions:
-
-- Lightweight edge runtime
-- Global edge deployment
-- Ultra-low latency response
-- Geolocation services
-
-### Client-Side Routing (/client-routing)
-
-Demonstrates client-side routing:
-
-- Navigation without page refresh
-- State persistence
-- Smooth user experience
-- Preloading optimization
-
-## 🔧 Development Commands
-
-```bash
-# Development mode
-npm run dev
-
-# Build project
-npm run build
-
-# Start production server
-npm run start
-
-# Type checking
-npm run typecheck
-```
+- **Edge Functions** - Ultra-low latency on 3200+ global edge nodes
+- **Node Functions** - Full Node.js runtime with npm ecosystem
+- Serverless architecture with auto-scaling
+- Perfect for APIs and backend logic
 
 ## 📁 Project Structure
 
@@ -130,13 +108,15 @@ app/
 │   ├── home.tsx        # Home page
 │   ├── ssr.tsx         # SSR demo
 │   ├── csr.tsx         # CSR demo
-│   ├── prerender.tsx   # Pre-render demo
 │   ├── streaming.tsx   # Streaming SSR demo
-│   ├── node-functions.tsx    # Node functions demo
-│   └── edge-functions.tsx    # Edge functions demo
+│   ├── prerender.tsx   # Pre-render demo
+│   └── pages-functions.tsx    # Pages Functions demo
 ├── app.css             # Global styles
 ├── root.tsx            # Root component
 └── routes.ts           # Route configuration
+edge-functions/         # Edge runtime functions
+node-functions/         # Node.js runtime functions
+public/                 # Static assets
 ```
 
 ## 🌟 Comparison with Next.js

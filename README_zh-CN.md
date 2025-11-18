@@ -5,10 +5,11 @@ A comprehensive React Router v7 starter template for EdgeOne Pages, showcasing v
 ## 🚀 特性
 
 - **Server-Side Rendering (SSR)** - 服务器端实时渲染
+- **Client-Side Rendering (CSR)** - 客户端动态渲染
+- **Streaming SSR** - 流式渲染与延迟数据加载
 - **Static Site Generation (SSG)** - 构建时静态生成
-- **Node Functions** - Node.js 运行时服务器函数
-- **Edge Functions** - 边缘运行时函数
-- **Client-Side Routing** - 快速客户端路由
+- **Pages Functions** - Edge 和 Node.js 无服务器函数
+- **现代化 UI** - 基于 Tailwind CSS 的精美界面
 
 ## 🛠️ 技术栈
 
@@ -35,6 +36,8 @@ edgeone pages dev
 edgeone pages deploy
 ```
 
+进一步了解 [EdgeOne CLI](https://pages.edgeone.ai/document/edgeone-cli)。
+
 ## 🎯 页面说明
 
 ### 首页 (/)
@@ -50,6 +53,26 @@ edgeone pages deploy
 - SEO 友好
 - 适合动态内容
 
+### CSR (/csr)
+
+演示客户端渲染：
+
+- 所有渲染在浏览器中进行
+- JavaScript 加载后获取数据
+- 丰富的交互体验
+- 降低服务器负载
+- 适合交互式应用
+
+### Streaming (/streaming)
+
+演示流式 SSR：
+
+- 渐进式渲染与延迟数据加载
+- 快速数据随 HTML 外壳立即发送
+- 慢速数据在可用时流式传输
+- 使用 Suspense 边界优化用户体验
+- 同时支持 SSR 和客户端导航
+
 ### Pre-render (/prerender)
 
 演示静态站点生成：
@@ -59,48 +82,14 @@ edgeone pages deploy
 - CDN 友好
 - 适合静态内容
 
-### Node Functions (/node-functions)
+### Pages Functions (/pages-functions)
 
-演示 Node.js 服务器函数：
+演示 EdgeOne Pages Functions：
 
-- 完整的 Node.js 运行时
-- 复杂后端逻辑
-- 数据库操作
-- API 集成
-
-### Edge Functions (/edge-functions)
-
-演示边缘函数：
-
-- 轻量级边缘运行时
-- 全球边缘部署
-- 超低延迟响应
-- 地理位置服务
-
-### Client-Side Routing (/client-routing)
-
-演示客户端路由：
-
-- 无页面刷新导航
-- 状态持久化
-- 流畅的用户体验
-- 预加载优化
-
-## 🔧 开发命令
-
-```bash
-# 开发模式
-npm run dev
-
-# 构建项目
-npm run build
-
-# 启动生产服务器
-npm run start
-
-# 类型检查
-npm run typecheck
-```
+- **Edge Functions** - 3200+ 全球边缘节点超低延迟
+- **Node Functions** - 完整的 Node.js 运行时与 npm 生态
+- 无服务器架构，自动扩缩容
+- 完美适配 API 和后端逻辑
 
 ## 📁 项目结构
 
@@ -118,13 +107,16 @@ app/
 ├── routes/             # 路由页面
 │   ├── home.tsx        # 首页
 │   ├── ssr.tsx         # SSR 演示
+│   ├── csr.tsx         # CSR 演示
+│   ├── streaming.tsx   # 流式 SSR 演示
 │   ├── prerender.tsx   # Pre-render 演示
-│   ├── node-functions.tsx    # Node 函数演示
-│   ├── edge-functions.tsx    # Edge 函数演示
-│   └── client-routing.tsx    # 客户端路由演示
+│   └── pages-functions.tsx    # Pages Functions 演示
 ├── app.css             # 全局样式
 ├── root.tsx            # 根组件
 └── routes.ts           # 路由配置
+edge-functions/         # Edge 运行时函数
+node-functions/         # Node.js 运行时函数
+public/                 # 静态资源
 ```
 
 ## 🌟 与 Next.js 的对比
