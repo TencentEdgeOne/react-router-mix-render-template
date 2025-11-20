@@ -15,7 +15,7 @@ const Hero = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://reactrouter.com/start/framework/installation"
+            href="https://console.tencentcloud.com/edgeone/pages/new?from=github&template=react-router-mix-render-template"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -24,11 +24,11 @@ const Hero = () => {
               className="bg-primary hover:bg-primary-dark text-white px-8 py-3 text-lg cursor-pointer"
             >
               <Zap className="w-5 h-5 mr-2" />
-              Get Started
+              One-Click Deployment
             </Button>
           </a>
           <a
-            href="https://reactrouter.com/start/modes"
+            href="https://pages.edgeone.ai/document/framework-freact-router"
             target="_blank"
             rel="noopener noreferrer"
           >

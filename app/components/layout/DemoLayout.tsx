@@ -29,7 +29,7 @@ export const DemoLayout = ({
         <p className="text-xl text-gray-600 mb-4">{subtitle}</p>
         <p className="text-lg text-gray-500 mb-8">{description}</p>
         <a
-          href="https://reactrouter.com/start/modes"
+          href="https://pages.edgeone.ai/document/framework-freact-router"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -61,9 +61,12 @@ export const DemoLayout = ({
                   const parts = para.split("**");
                   const title = parts[1];
                   const content = parts.slice(2).join("**");
-                  
+
                   return (
-                    <div key={index} className="bg-white rounded-lg p-5 border border-gray-200">
+                    <div
+                      key={index}
+                      className="bg-white rounded-lg p-5 border border-gray-200"
+                    >
                       <h4 className="text-base font-semibold text-primary mb-3 font-mono">
                         {title}
                       </h4>
@@ -73,9 +76,12 @@ export const DemoLayout = ({
                     </div>
                   );
                 }
-                
+
                 return (
-                  <p key={index} className="text-gray-600 text-base leading-relaxed bg-white rounded-lg p-4 border-l-4 border-primary">
+                  <p
+                    key={index}
+                    className="text-gray-600 text-base leading-relaxed bg-white rounded-lg p-4 border-l-4 border-primary"
+                  >
                     {para}
                   </p>
                 );

@@ -119,34 +119,9 @@ node-functions/         # Node.js runtime functions
 public/                 # Static assets
 ```
 
-## 🌟 Comparison with Next.js
-
-This project replicates the functionality of Next.js hybrid rendering template, but implemented with React Router v7:
-
-### Similarities
-
-- Supports SSR and SSG
-- Server function support
-- Modern development experience
-- TypeScript support
-
-### Differences
-
-- **Routing System**: React Router v7 uses file-system routing + configuration file
-- **API Routes**: Implemented through loader/action functions
-- **Build Tool**: Based on Vite instead of Webpack
-- **Deployment**: More flexible deployment options
-
-### React Router v7 Advantages
-
-- Cleaner API design
-- Better TypeScript support
-- Faster development server (Vite)
-- More flexible deployment options
-- Better error handling
-
 ## 📚 Learning Resources
 
+- [EdgeOne Pages Official Documentation](https://pages.edgeone.ai/document/framework-freact-router)
 - [React Router v7 Official Documentation](https://reactrouter.com/start/framework)
 - [React Router v7 GitHub](https://github.com/remix-run/react-router)
 - [Vite Documentation](https://vitejs.dev/)

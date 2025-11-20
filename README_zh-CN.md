@@ -119,37 +119,12 @@ node-functions/         # Node.js 运行时函数
 public/                 # 静态资源
 ```
 
-## 🌟 与 Next.js 的对比
-
-这个项目复刻了 Next.js 混合渲染模板的功能，但使用 React Router v7 实现：
-
-### 相同点
-
-- 支持 SSR、SSG
-- 服务器函数支持
-- 现代化的开发体验
-- TypeScript 支持
-
-### 不同点
-
-- **路由系统**: React Router v7 使用文件系统路由 + 配置文件
-- **API 路由**: 通过 loader/action 函数实现
-- **构建工具**: 基于 Vite 而非 Webpack
-- **部署**: 更灵活的部署选项
-
-### React Router v7 的优势
-
-- 更简洁的 API 设计
-- 更好的 TypeScript 支持
-- 更快的开发服务器 (Vite)
-- 更灵活的部署选项
-- 更好的错误处理
-
 ## 📚 学习资源
 
-- [React Router v7 官方文档](https://reactrouter.com/start/framework)
+- [EdgeOne Pages 官方文档](https://pages.edgeone.ai/document/framework-freact-router)
+- [React Router v7 官方文档](https://reactrouter.com/home)
 - [React Router v7 GitHub](https://github.com/remix-run/react-router)
-- [Vite 文档](https://vitejs.dev/)
+- [Vite 文档](https://vite.dev/)
 - [Tailwind CSS 文档](https://tailwindcss.com/)
 
 ## 🤝 贡献
