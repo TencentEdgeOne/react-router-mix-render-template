@@ -9,7 +9,8 @@ export function meta({}: Route.MetaArgs) {
     { title: "Pages Functions - EdgeOne Pages React Router Starter" },
     {
       name: "description",
-      content: "Serverless functions demonstration with React Router v7 on EdgeOne Pages",
+      content:
+        "Serverless functions demonstration with React Router v7 on EdgeOne Pages",
     },
   ];
 }
@@ -53,10 +54,12 @@ export default function PagesFunctionsPage() {
           EdgeOne Pages React Router Starter - Pages Functions
         </h1>
         <p className="text-xl text-gray-600 mb-4">
-          Pages Functions is a serverless architecture solution that allows you to run server-side code without configuring or managing servers.
+          Pages Functions is a serverless architecture solution that allows you
+          to run server-side code without configuring or managing servers.
         </p>
         <p className="text-lg text-gray-500 mb-8">
-          Supports auto-scaling, global edge deployment, API development, and database connections for seamless full-stack integration.
+          Supports auto-scaling, global edge deployment, API development, and
+          database connections for seamless full-stack integration.
         </p>
         <a
           href="https://pages.edgeone.ai/document/pages-functions-overview"
@@ -76,12 +79,17 @@ export default function PagesFunctionsPage() {
       {/* Edge Functions Section */}
       <div className="container mx-auto px-4 mb-16">
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Edge Functions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Edge Functions
+          </h2>
           <p className="text-lg text-gray-700 mb-3">
-            Run code on 3200+ global edge nodes with ultra-low latency and elastic auto-scaling.
+            Run code on 3200+ global edge nodes with ultra-low latency and
+            elastic auto-scaling.
           </p>
           <p className="text-base text-gray-600 mb-6">
-            Ideal for high-concurrency, latency-sensitive scenarios like lightweight APIs, real-time notifications, content personalization, and A/B testing. Millisecond cold start with short execution time.
+            Ideal for high-concurrency, latency-sensitive scenarios like
+            lightweight APIs, real-time notifications, content personalization,
+            and A/B testing. Millisecond cold start with short execution time.
           </p>
 
           {/* Code example */}
@@ -89,12 +97,20 @@ export default function PagesFunctionsPage() {
             <pre className="text-sm overflow-x-auto">
               <code className="text-gray-100">{`// edge-functions/hello.js
 export default function onRequest(context) {
-  const {geo} = context;
+  const { geo, request } = context;
+
+  // Get request headers added by middleware
+  const middlewareHeaders = {
+    'x-middleware-timestamp': request.headers.get('x-middleware-timestamp'),
+    'x-request-path': request.headers.get('x-request-path'),
+    'x-powered-by': request.headers.get('x-powered-by'),
+  };
 
   return new Response(JSON.stringify({
     message: 'Hello Edge!',
     geo: geo,
-  }), {
+    middlewareHeaders: middlewareHeaders,
+  }, null, 2), {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -121,7 +137,10 @@ export default function onRequest(context) {
             {edgeData && (
               <div className="space-y-2 text-left overflow-hidden mt-4">
                 <p className="text-gray-700">
-                  <span className="text-primary font-medium">Function Return:</span> {edgeData}
+                  <span className="text-primary font-medium">
+                    Function Return:
+                  </span>{" "}
+                  {edgeData}
                 </p>
               </div>
             )}
@@ -132,12 +151,17 @@ export default function onRequest(context) {
       {/* Node Functions Section */}
       <div className="container mx-auto px-4 mb-20">
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Node Functions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Node Functions
+          </h2>
           <p className="text-lg text-gray-700 mb-3">
-            Full Node.js runtime with rich npm ecosystem and native modules for powerful server-side processing.
+            Full Node.js runtime with rich npm ecosystem and native modules for
+            powerful server-side processing.
           </p>
           <p className="text-base text-gray-600 mb-6">
-            Perfect for Node.js-dependent workloads, complex data processing, database operations, and third-party integrations. Runs in cloud centers with support for long-running tasks.
+            Perfect for Node.js-dependent workloads, complex data processing,
+            database operations, and third-party integrations. Runs in cloud
+            centers with support for long-running tasks.
           </p>
 
           {/* Code example */}
@@ -145,7 +169,23 @@ export default function onRequest(context) {
             <pre className="text-sm overflow-x-auto">
               <code className="text-gray-100">{`// node-functions/hello.js
 export default function onRequest(context) {
-  return new Response('Hello Node!')
+  const { request } = context;
+
+  // Get request headers added by middleware
+  const middlewareHeaders = {
+    'x-middleware-timestamp': request.headers.get('x-middleware-timestamp'),
+    'x-request-path': request.headers.get('x-request-path'),
+    'x-powered-by': request.headers.get('x-powered-by'),
+  };
+
+  return new Response(JSON.stringify({
+    message: 'Hello Node!',
+    middlewareHeaders: middlewareHeaders,
+  }, null, 2), {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
 }`}</code>
             </pre>
           </div>
@@ -168,7 +208,10 @@ export default function onRequest(context) {
             {nodeData && (
               <div className="space-y-2 text-left overflow-hidden mt-4">
                 <p className="text-gray-700">
-                  <span className="text-primary font-medium">Function Return:</span> {nodeData}
+                  <span className="text-primary font-medium">
+                    Function Return:
+                  </span>{" "}
+                  {nodeData}
                 </p>
               </div>
             )}
