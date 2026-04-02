@@ -122,7 +122,7 @@ public/                 # Static assets
 ## 📚 Learning Resources
 
 - [EdgeOne Pages Official Documentation](https://pages.edgeone.ai/document/framework-freact-router)
-- [React Router v7 Official Documentation](https://reactrouter.com/start/framework)
+- [React Router v7 Official Documentation](https://reactrouter.com/home)
 - [React Router v7 GitHub](https://github.com/remix-run/react-router)
 - [Vite Documentation](https://vitejs.dev/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/)
